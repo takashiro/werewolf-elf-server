@@ -48,7 +48,7 @@ $room_roles = $table->fetch_all('*', 'room_id='.$room_id);
 
 $room['roles'] = array();
 foreach($room_roles as $row) {
-	$room['roles'][] = $row['role_id'];
+	$room['roles'][] = intval($row['role_id']);
 }
 
 echo json_encode($room);
